@@ -174,44 +174,44 @@ ORDER BY frequency DESC;
 ### ERD Visualization ###
 8. Use QuickDBD to visualize your database schema. Type the following structure into QuickDBD:
 
-Employees
----------
-emp_no INT PK
-emp_title VARCHAR(255)
-birth_date "DATE NOT NULL"
-first_name "VARCHAR(255) NOT NULL"
-last_name "VARCHAR(255) NOT NULL"
-sex "CHAR(1) NOT NULL"
-hire_date "DATE NOT NULL"
-
-Departments
------------
-dept_no VARCHAR(4) PK
-dept_name "VARCHAR(40) NOT NULL"
-
-Dept_manager
-------------
-dept_no VARCHAR(4) FK >- Departments.dept_no
-emp_no INT FK >- Employees.emp_no
-PRIMARYKEY "(dept_no, emp_no)"
-
-Dept_emp
---------
-emp_no INT FK >- Employees.emp_no
-dept_no VARCHAR(4) FK >- Departments.dept_no
-PRIMARYKEY "(emp_no, dept_no)"
-
-Salaries
---------
-emp_no INT FK >- Employees.emp_no
-salary "DECIMAL(10, 2) NOT NULL"
-PRIMARYKEY "(emp_no)"
-
-Titles
-------
-title_id VARCHAR(10) PK
-title "VARCHAR(255) NOT NULL"
+Employees 
+-- 
+emp_no INT PK 
+emp_title VARCHAR(255) 
+birth_date "DATE NOT NULL" 
+first_name "VARCHAR(255) NOT NULL" 
+last_name "VARCHAR(255) NOT NULL" 
+sex "CHAR(1) NOT NULL" 
+hire_date "DATE NOT NULL" 
+ 
+Departments 
+-- 
+dept_no VARCHAR(4) PK 
+dept_name "VARCHAR(40) NOT NULL" 
+ 
+Dept_manager 
+-- 
+dept_no VARCHAR(4) FK >- Departments.dept_no 
+emp_no INT FK >- Employees.emp_no 
+PRIMARYKEY "(dept_no, emp_no)" 
+ 
+Dept_emp 
+-- 
+emp_no INT FK >- Employees.emp_no 
+dept_no VARCHAR(4) FK >- Departments.dept_no 
+PRIMARYKEY "(emp_no, dept_no)" 
+ 
+Salaries 
+-- 
+emp_no INT FK >- Employees.emp_no 
+salary "DECIMAL(10, 2) NOT NULL" 
+PRIMARYKEY "(emp_no)" 
+ 
+Titles 
+-- 
+title_id VARCHAR(10) PK 
+title "VARCHAR(255) NOT NULL" 
+ 
 
 ### Conclusion ###
 - This guide walks you through setting up and managing an employee database using PostgreSQL. You’ll create tables, import data, and execute queries to gain insights from your dataset. Happy querying!
-
